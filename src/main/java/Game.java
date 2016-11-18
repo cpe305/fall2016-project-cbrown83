@@ -8,9 +8,7 @@ public class Game {
 	List<City> cities; 
 	
 	public static void main(String[] args) {
-		System.out.println("print");
-	
-
+		System.out.println("print"); 
 	}
 
 }
