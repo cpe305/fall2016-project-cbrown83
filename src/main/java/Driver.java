@@ -14,7 +14,6 @@ public class Driver {
 		switch(choice.charAt(0)) 
 		{
 			case '1': // Start game
-				System.out.println("start game");
 				Game.playGame(writer, reader); 
 				break; 
 				

@@ -1,9 +1,9 @@
 {
-	"continue": "Press ENTER to continue",
-	 
+	"continue": "Press ENTER to continue", 
 	"greeting": "Welcome to Santa's Christmas Adventure!",
-	"homeScreenOptions": ["1. Go on the adventure", "2. See the best Santa's", "3. Exit"],
-	
-	"reindeerNames": ["1. ", "2. ", "3. ", "4. ", "5. ", "6. ", "7. ", "8. ", "9. "]
-	
+	"homeScreenOptions": [
+            "1. Go on the adventure", 
+            "2. See the best Santa's", 
+            "3. Exit"
+        ]
 }
