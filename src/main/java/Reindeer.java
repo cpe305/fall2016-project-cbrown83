@@ -1,9 +1,12 @@
 
 public class Reindeer {
 	private static final int DEFAULT_REINDEER_HEALTH = 10; 
+	
+	String name; 
 	int health; 
 	
-	public Reindeer() {
+	public Reindeer(String name) {
+		this.name = name; 
 		this.health = DEFAULT_REINDEER_HEALTH; 
 	}
 	
@@ -17,5 +20,13 @@ public class Reindeer {
 	
 	public int getHealth() {
 		return this.health;
+	}
+	
+	public String getName() {
+		return this.name; 
+	}
+	
+	public void setName(String name) {
+		this.name = name; 
 	}
 }

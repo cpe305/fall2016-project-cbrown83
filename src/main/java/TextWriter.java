@@ -1,16 +1,18 @@
 import java.io.FileReader;
 import java.net.URL;
+import java.util.Iterator;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 // singleton class
-public class TextFormatter {
+public class TextWriter {
 	
-	private static TextFormatter instance = null;
+	private static TextWriter instance = null;
 	private static JSONObject gameScript = null; 
 	
-	protected TextFormatter() {
+	protected TextWriter() {
 		try {
 			gameScript = getGameText();
 		}
@@ -19,20 +21,20 @@ public class TextFormatter {
 		}
 	}
 	
-	public static TextFormatter getInstance() {
+	public static TextWriter getInstance() {
 		if (instance == null) {
-			instance = new TextFormatter();
+			instance = new TextWriter();
 		}
 		return instance; 
 	}
 	
-	public void printGameText(String textType) {
+	public void printGameText(String textType, boolean wait) {
 		
 		try {
 			if (gameScript.containsKey(textType)) {
 				String text = gameScript.get(textType).toString(); 
 				System.out.println(text); 
-				waitForContinue();
+				if (wait) {waitForContinue();}
 			}
 			else {
 				throw new Exception("Invalid JSON Key");
@@ -43,7 +45,29 @@ public class TextFormatter {
 		}
 	}
 	
-	private static void waitForContinue() {
+	public void printOptionText(String scriptKey, String message) 
+	{
+		try {
+			if (gameScript.containsKey(scriptKey)) {
+				JSONArray options = (JSONArray) gameScript.get(scriptKey); 
+				Iterator<String> iterator = options.iterator(); 
+				while (iterator.hasNext()) {
+					System.out.println(iterator.next());
+				}
+				System.out.println(message);
+			}
+			else {
+				throw new Exception("Invalid JSON Key");
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static void waitForContinue() 
+	{
+		System.out.print(gameScript.get("continue").toString()); 
 		try {
 			int nextChar = System.in.read();  
 			while (nextChar != '\n') {
