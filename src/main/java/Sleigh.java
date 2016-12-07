@@ -1,16 +1,45 @@
 
 public class Sleigh {
-	private static final int DEFAULT_SLEIGH_HEALTH = 100; 
-	int health; 
+	private static final int SLEIGH_CAPACITY = 500; 
+	private static final int DEFAULT_WEIGHT_PRESENTS = 200; 
 	
-	public Sleigh() {
-		this.health = DEFAULT_SLEIGH_HEALTH; 
+	private Santa santa; 
+	private int weight; 
+	private boolean damaged; 
+	
+	public Sleigh(Santa santa) {
+		this.santa = santa; 
+		this.weight = santa.getWeight() + DEFAULT_WEIGHT_PRESENTS; 
+		this.damaged = false; 
 	}
 	public void repair() {
-		this.health += 10; 
+		this.damaged = false; 
 	}
 	
-	public void damage(int impact) {
-		this.health -= impact; 
+	public void damage() {
+		this.damaged = true; 
 	}
+	
+	public boolean isDamaged() {
+		return damaged; 
+	}
+	
+	public void addWeight(int weight) {
+		if (weight + this.weight > SLEIGH_CAPACITY)
+		this.weight += weight; 
+	}
+	
+	public int getWeight() {
+		return weight; 
+	}
+	
+	public boolean hasCapacity() {
+		return SLEIGH_CAPACITY > weight; 
+	}
+	
+	public int getRemainingCapacity() {
+		return SLEIGH_CAPACITY - weight; 
+	}
+	
+	
 }

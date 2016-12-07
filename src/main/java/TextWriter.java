@@ -2,15 +2,16 @@ import java.io.FileReader;
 import java.net.URL;
 import java.util.Iterator;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.json.simple.JSONObject; 
 import org.json.simple.parser.JSONParser;
+import org.json.simple.JSONArray; 
+
 
 // singleton class
 public class TextWriter {
 	
 	private static TextWriter instance = null;
-	private static JSONObject gameScript = null; 
+	private static JSONObject gameScript; 
 	
 	protected TextWriter() {
 		try {
@@ -45,7 +46,7 @@ public class TextWriter {
 		}
 	}
 	
-	public void printOptionText(String scriptKey, String message) 
+	public void printOptionText(String scriptKey) 
 	{
 		try {
 			if (gameScript.containsKey(scriptKey)) {
@@ -54,7 +55,6 @@ public class TextWriter {
 				while (iterator.hasNext()) {
 					System.out.println(iterator.next());
 				}
-				System.out.println(message);
 			}
 			else {
 				throw new Exception("Invalid JSON Key");
@@ -88,9 +88,9 @@ public class TextWriter {
 			URL url = getClass().getResource("gameScript.json");
 			Object obj = reader.parse(new FileReader(
 					url.getPath()));
-			JSONObject jsonObject = (JSONObject) obj;
+			JSONObject JSONObject = (JSONObject) obj;
 			
-			return jsonObject; 
+			return JSONObject; 
 			
 		}
 		catch (Exception e) {
@@ -98,5 +98,9 @@ public class TextWriter {
 		}
 		
 		throw new Exception("JSON Parsing Error");
+	}
+	
+	public static JSONObject getGameScript() {
+		return gameScript; 
 	}
 }
