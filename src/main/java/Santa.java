@@ -31,6 +31,7 @@ public class Santa {
 	}
 	
 	// use negative integers to remove items
+	// assumed that item/quantity combination does not exceed sleigh capacity 
 	public void updateInventory(String item, int quantity, JSONObject script) {
 		if (script.containsKey(item)) {
 			int weight = cost(item, script) * quantity; 			
