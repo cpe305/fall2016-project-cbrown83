@@ -27,13 +27,13 @@ public class Game {
 	private static final String SEATTLE = "Seattle";
 	
 	// store items
-	public static final String CARROTS = "Carrots"; 
-	public static final String GINGERBREAD_MEN = "Gingerbread Men"; 
-	public static final String HOT_COCOA = "Hot Cocoa"; 
-	public static final String SANTA_HAT = "Santa Hat"; 
-	public static final String SANTA_COAT = "Santa Coat"; 
-	public static final String CANDY_CANES = "Candy Canes";
-	public static final String SLEIGH_PARTS = "Sleigh Repair Parts"; 
+	public static final String CARROT = "carrot"; 
+	public static final String GINGERBREAD_MEN = "gingerbreadMen"; 
+	public static final String HOT_COCOA = "hotCocoa"; 
+	public static final String SANTA_HAT = "santaHat"; 
+	public static final String SANTA_COAT = "santaCoat"; 
+	public static final String CANDY_CANES = "candyCanes";
+	public static final String SLEIGH_PARTS = "sleighParts"; 
 	
 	private static TextWriter writer; 
 	private static InputReader reader;
