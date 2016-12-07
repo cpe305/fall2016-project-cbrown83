@@ -1,10 +1,11 @@
-
 public class Driver {
+	
+	private Driver() {}
 	
 	private static TextWriter writer = new TextWriter(); 
 	private static InputReader reader = InputReader.getInstance(); 
 	
-	public static void main(String[] args) 
+	public static void main(String[] args) throws Exception
 	{	
 		writer.printGameText("messageGreeting", false);
 		writer.printOptionText("optionsHomeScreen");
@@ -13,13 +14,8 @@ public class Driver {
 		switch(choice) 
 		{
 			case 1: // Start game
-				try {
-					Game game = Game.getInstance(writer, reader); 
-					game.play();
-				}
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+				Game game = Game.getInstance(writer, reader); 
+				game.play();
 				break; 
 				
 			case 2: // View high scores
@@ -27,6 +23,9 @@ public class Driver {
 				break;
 				
 			case 3: // Exit		
+				return; 
+				
+			default: 
 				return; 
 		}
 	}
