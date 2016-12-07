@@ -35,7 +35,9 @@ public class TextWriter {
 			if (gameScript.containsKey(textType)) {
 				String text = gameScript.get(textType).toString(); 
 				System.out.println(text); 
-				if (wait) {waitForContinue();}
+				if (wait) {
+					waitForContinue();
+				}
 			}
 			else {
 				throw new Exception("Invalid JSON Key");
@@ -88,10 +90,8 @@ public class TextWriter {
 			URL url = getClass().getResource("gameScript.json");
 			Object obj = reader.parse(new FileReader(
 					url.getPath()));
-			JSONObject JSONObject = (JSONObject) obj;
-			
-			return JSONObject; 
-			
+			return (JSONObject) obj;
+						
 		}
 		catch (Exception e) {
 			e.printStackTrace();
