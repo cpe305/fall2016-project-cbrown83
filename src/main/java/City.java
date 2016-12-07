@@ -1,7 +1,8 @@
 import org.json.simple.JSONObject; 
 
 public class City {
-	String name, landmark; 
+	String name; 
+	String landmark; 
 	Store store; 
 	boolean visited; 
 	City nextCity; 
@@ -51,7 +52,7 @@ public class City {
 	public boolean equals(Object o) {
 		City c = (City) o; 
 		
- 		return ((c.getName() == this.name) && (c.getLandmark() == this.landmark) &&
- 				c.getNextCity() == this.nextCity); 
+ 		return (c.getName() == this.name) && (c.getLandmark() == this.landmark) &&
+ 				c.getNextCity() == this.nextCity; 
 	}
 }
