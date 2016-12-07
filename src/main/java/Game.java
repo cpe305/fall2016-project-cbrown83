@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import org.json.simple.JSONArray; 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject; 
 
 
@@ -42,14 +43,14 @@ public class Game {
 	private static Santa santa; 
 	private static Sleigh sleigh; 
 	private static List<Reindeer> reindeer;
-	public static HashMap<String, City> cities;
-	public static HashMap<String, Integer> storeItems;
+	public static Map<String, City> cities;
+	public static Map<String, Integer> storeItems;
 	
 	private static Game instance = null; 
 	
-	protected Game(TextWriter writer, InputReader reader) {
-		this.writer = writer; 
-		this.reader = reader; 
+	protected Game(TextWriter w, InputReader r) {
+		writer = w; 
+		reader = r; 
 	}
 	
 	public static Game getInstance(TextWriter writer, InputReader reader) {
@@ -95,7 +96,8 @@ public class Game {
 	private static void populateMap() throws Exception {
 		cities = new HashMap<String, City>(); 
 		JSONObject city; 
-		String name, landmark; 
+		String name; 
+		String landmark; 
 		if (script.containsKey("setupCities")) {
 			JSONArray setupCities = (JSONArray) script.get("setupCities");
 			// initiate all cities
@@ -113,26 +115,47 @@ public class Game {
 	private static void setRoute(int startLocation) {
 		switch (startLocation) {
 			case 1: //Tokyo
-				cities.get(NORTH_POLE).setNextCity(cities.get(TOKYO));
-				cities.get(TOKYO).setNextCity(cities.get(SYDNEY));
-				cities.get(SYDNEY).setNextCity(cities.get(AUKLAND));
-				cities.get(AUKLAND).setNextCity(cities.get(BEIJING));
+				startAtTokyo(); 
 				break; 
 				
 			case 2: //Sydney
-				cities.get(NORTH_POLE).setNextCity(cities.get(SYDNEY));
-				cities.get(SYDNEY).setNextCity(cities.get(AUKLAND));
-				cities.get(AUKLAND).setNextCity(cities.get(TOKYO));
-				cities.get(TOKYO).setNextCity(cities.get(BEIJING));
+				startAtSydney(); 
 				break; 
 				
 			case 3: //Aukland
-				cities.get(NORTH_POLE).setNextCity(cities.get(AUKLAND));
-				cities.get(AUKLAND).setNextCity(cities.get(SYDNEY));
-				cities.get(SYDNEY).setNextCity(cities.get(TOKYO));
-				cities.get(TOKYO).setNextCity(cities.get(BEIJING));
+				startAtAukland(); 
+				break; 
+				
+			default: 
 				break; 
 		}
+	}
+	
+	private static void startAtTokyo() {
+		cities.get(NORTH_POLE).setNextCity(cities.get(TOKYO));
+		cities.get(TOKYO).setNextCity(cities.get(SYDNEY));
+		cities.get(SYDNEY).setNextCity(cities.get(AUKLAND));
+		cities.get(AUKLAND).setNextCity(cities.get(BEIJING));
+		finishRoute(); 
+	}
+	
+	private static void startAtSydney() {
+		cities.get(NORTH_POLE).setNextCity(cities.get(SYDNEY));
+		cities.get(SYDNEY).setNextCity(cities.get(AUKLAND));
+		cities.get(AUKLAND).setNextCity(cities.get(TOKYO));
+		cities.get(TOKYO).setNextCity(cities.get(BEIJING));
+		finishRoute(); 
+	}
+	
+	private static void startAtAukland() {
+		cities.get(NORTH_POLE).setNextCity(cities.get(AUKLAND));
+		cities.get(AUKLAND).setNextCity(cities.get(SYDNEY));
+		cities.get(SYDNEY).setNextCity(cities.get(TOKYO));
+		cities.get(TOKYO).setNextCity(cities.get(BEIJING));
+		finishRoute();
+	}
+	
+	private static void finishRoute() {
 		cities.get(BEIJING).setNextCity(cities.get(MOSCOW));
 		cities.get(MOSCOW).setNextCity(cities.get(PARIS));
 		cities.get(PARIS).setNextCity(cities.get(BUENOS_AIRES));
@@ -144,6 +167,10 @@ public class Game {
 	
 	private void gameOver() {
 		
+	}
+	
+	private void randomEvent() {
+
 	}
 	
 }
