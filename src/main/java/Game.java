@@ -82,9 +82,12 @@ public class Game {
 		List<Reindeer> reindeer = new ArrayList<Reindeer>(); 
 		
 		System.out.println("Enter names for the nine reindeer: ");
+		String name; 
 		for (int i = 0; i < NUMBER_OF_REINDEER; i++) {
 			System.out.print(i+1 + ". "); 
-			reindeer.add(new Reindeer(reader.getInput()));
+			name = reader.getInput(); 
+			System.out.println("adding " + name);
+			reindeer.add(new Reindeer(name));
 		}
 		return reindeer; 
 	}
