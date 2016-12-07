@@ -9,14 +9,14 @@ public class TestCity {
 	
 	@Test 
 	public void testGetName() {
-		assertEquals(tokyo.getName(), "Tokyo");
-		assertEquals(paris.getName(), "Paris");
+		assertEquals("Testing Tokyo...", tokyo.getName(), "Tokyo");
+		assertEquals("Testing Paris...", paris.getName(), "Paris");
 	}
 		
 	@Test 
 	public void testGetLandmark() {
-		assertEquals(tokyo.getLandmark(), "landmark1");
-		assertEquals(paris.getLandmark(), "landmark2");
+		assertEquals("Testing Tokyo...", tokyo.getLandmark(), "landmark1");
+		assertEquals("Testing Tokyo...", paris.getLandmark(), "landmark2");
 	}
 	
 	@Test 
@@ -24,8 +24,8 @@ public class TestCity {
 		tokyo.setNextCity(paris);
 		paris.setNextCity(tokyo);
 		
-		assertEquals(tokyo.getNextCity(), paris);
-		assertEquals(paris.getNextCity(), tokyo);
+		assertEquals("Testing Tokyo...", tokyo.getNextCity(), paris);
+		assertEquals("Testing Paris...", paris.getNextCity(), tokyo);
 	}
 	
 	@Test
@@ -34,11 +34,11 @@ public class TestCity {
 		try {
 			JSONObject script = writer.getGameText();
 			
-			assertNull(tokyo.getStore());
-			assertFalse(tokyo.isVisited());
+			assertNull("Testing Tokyo unititialized...", tokyo.getStore());
+			assertFalse("Testing Tokyo is not visited...", tokyo.isVisited());
 			tokyo.visit(script);
-			assertTrue(tokyo.isVisited());
-			assertNotNull(tokyo.getStore());
+			assertTrue("Testing Tokyo is visited...", tokyo.isVisited());
+			assertNotNull("Testing Tokyo store was created", tokyo.getStore());
 		}
 		catch (Exception e) {
 			e.printStackTrace();
