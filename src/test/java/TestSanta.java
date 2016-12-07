@@ -5,6 +5,8 @@ import org.junit.Test;
 
 public class TestSanta {
 	Santa santa = new Santa(); 
+	Sleigh sleigh = new Sleigh(santa); 
+	
 	TextWriter writer = TextWriter.getInstance();
 	
 	@Test
@@ -25,22 +27,10 @@ public class TestSanta {
 				santa.getPresentsDelivered());
 	}
 	
-	@Test
-	public void testCost() {
-		try {
-			JSONObject script = writer.getGameText(); 
-			assertEquals("Testing cost method...", 
-					1, 
-					santa.cost("carrot", script));
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
 	
 	@Test 
 	public void testUpdateInventory() {
+		santa.setSleigh(sleigh);
 		try {
 			JSONObject script = writer.getGameText(); 
 			

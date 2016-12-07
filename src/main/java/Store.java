@@ -27,6 +27,10 @@ public class Store {
 		
 	}
 	
+	public static int cost(String item, JSONObject script) {
+		return Integer.valueOf(script.get(item).toString());
+	}
+	
 	public void visit() {
 		// display welcome message
 		// display all keys with associated values

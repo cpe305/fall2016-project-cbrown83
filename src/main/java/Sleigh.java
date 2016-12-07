@@ -22,22 +22,12 @@ public class Sleigh {
 		return damaged; 
 	}
 	
+	public void notify(Santa santa) {
+		updateWeight(santa);
+	}
 	// update sleigh weight when santa buys anything
 	public void updateWeight(Santa santa) {
 		this.weight = santa.getWeight() + DEFAULT_WEIGHT_PRESENTS; 
-	}
-	
-	// update the weight of the sleigh
-	// use negative numbers to make the sleigh lighter (e.g. successful delivery)
-	// returns whether you can add or remove weight based on sleigh capacity
-	public boolean updateWeight(int weight) {
-		if (weight + this.weight <= SLEIGH_CAPACITY) { 
-			this.weight += weight;
-			return true;
-		}
-		else {
-			return false; 
-		}
 	}
 	
 	public int getWeight() {

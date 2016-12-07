@@ -14,6 +14,7 @@ public class Santa {
 	private int candyCanes = 0; 
 	private int sleighParts = 0; 
 	
+	private Sleigh sleigh; 
 	private int presentsDelivered = 0;
 	private int timesCaught = 0; 
 	
@@ -34,7 +35,7 @@ public class Santa {
 	// assumed that item/quantity combination does not exceed sleigh capacity 
 	public void updateInventory(String item, int quantity, JSONObject script) {
 		if (script.containsKey(item)) {
-			int weight = cost(item, script) * quantity; 			
+			int weight = Store.cost(item, script) * quantity; 			
 			if (item.equals(Game.CARROT)) {
 				this.carrots += weight; 
 			}
@@ -56,11 +57,9 @@ public class Santa {
 			else if (item.equals(Game.SLEIGH_PARTS)) {
 				this.sleighParts += weight; 
 			}
+			// update sleigh weight
+			sleigh.notify(this); 
 		}	
-	}
-	
-	public int cost(String item, JSONObject script) {
-		return Integer.valueOf(script.get(item).toString());
 	}
 	
 	public int getGingerbreadMen() {
@@ -97,5 +96,9 @@ public class Santa {
 	
 	public int getTimesCaught() {
 		return timesCaught; 
+	}
+	
+	public void setSleigh(Sleigh sleigh) {
+		this.sleigh = sleigh; 
 	}
 }

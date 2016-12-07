@@ -63,6 +63,7 @@ public class Game {
 		script = writer.getGameScript();
 		santa = new Santa(); 
 		sleigh = new Sleigh(santa); 
+		santa.setSleigh(sleigh); 
 		reindeer = getReindeerNames(); 
 		initiateRoute(); 
 		
