@@ -18,6 +18,7 @@ public class TestSanta {
 	
 	@Test
 	public void testDeliverPresents() {
+		santa.setSleigh(sleigh);
 		santa.successfulDelivery();
 		assertEquals("Testing successfulDelivery - updated weight...", 
 				230, 
