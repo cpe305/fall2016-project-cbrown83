@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject; 
@@ -14,6 +15,7 @@ public class Game {
 	
 	private static final int NUMBER_OF_REINDEER = 9; 
 	private static final int NUMBER_OF_CITIES = 11; 
+	private static ArrayList<String> DEFAULT_REINDEER_NAMES = new ArrayList<String>(); 
 	
 	// cities to visit
 	private static final String NORTH_POLE = "North Pole";
@@ -44,9 +46,10 @@ public class Game {
 	private static Santa santa; 
 	private static Sleigh sleigh; 
 	private City curCity; 
-	private static List<Reindeer> reindeer;
+	private static List<Reindeer> reindeer = new ArrayList<Reindeer>();
 	public static Map<String, City> cities;
 	public static Map<String, Integer> storeItems;
+	private static Random random = new Random(); 
 	
 	private static Game instance = null; 
 	
@@ -71,11 +74,14 @@ public class Game {
 		reindeer = getReindeerNames(); 
 		initiateRoute(); 
 		
+		curCity = cities.get("North Pole");
 		cities.get("North Pole").visit(santa, sleigh, script, NUMBER_OF_CITIES);
 		
-		
+		startAdventure(); 
 		
 		// end game - total score
+		System.out.println("Congratulations! Your score was " + getScore(santa, sleigh) + "\n");
+		// save
 	}
 	
 	public void startAdventure() {
@@ -97,20 +103,38 @@ public class Game {
 	}
 	
 	// need to add auto-fill feature
-	private static List<Reindeer> getReindeerNames() {
-		List<Reindeer> reindeer = new ArrayList<Reindeer>(); 
-		
+	private static List<Reindeer> getReindeerNames() {		
 		System.out.println("Enter names for the nine reindeer: ");
-		String name; 
+		System.out.println("If you would like to use the default names, type 'autofill'.");
+		String name = ""; 
 		for (int i = 0; i < NUMBER_OF_REINDEER; i++) {
 			System.out.print(i+1 + ". "); 
 			name = reader.getInput(); 
-			System.out.println("adding " + name);
+			if (name.equals("autofill")) {
+				break; 
+			}
 			reindeer.add(new Reindeer(name));
+		}
+		if (name.equals("autofill")) {
+			autofillReindeer(); 
 		}
 		return reindeer; 
 	}
 
+	private static void autofillReindeer() {
+		DEFAULT_REINDEER_NAMES.add("Dasher"); 
+		DEFAULT_REINDEER_NAMES.add("Dancer"); 
+		DEFAULT_REINDEER_NAMES.add("Prancer"); 
+		DEFAULT_REINDEER_NAMES.add("Vixen"); 
+		DEFAULT_REINDEER_NAMES.add("Comet"); 
+		DEFAULT_REINDEER_NAMES.add("Cupid"); 
+		DEFAULT_REINDEER_NAMES.add("Donner"); 
+		DEFAULT_REINDEER_NAMES.add("Blixen"); 
+		DEFAULT_REINDEER_NAMES.add("Rudolph"); 
+		for (int i = 0; i < NUMBER_OF_REINDEER; i++) {
+			reindeer.add(new Reindeer(DEFAULT_REINDEER_NAMES.get(i)));
+		}
+	}
 	private static void populateMap() throws Exception {
 		cities = new HashMap<String, City>(); 
 		JSONObject city; 
@@ -182,12 +206,18 @@ public class Game {
 		cities.get(MEXICO_CITY).setNextCity(cities.get(SEATTLE));
 	}
 	
-	private void gameOver() {
-		
+	
+	private int getScore(Santa santa, Sleigh sleigh) {
+		return santa.getCandyCanes() + santa.getCarrots() + santa.getGingerbreadMen() + 
+				santa.getHotCocoa() + santa.getSantaCoat() + santa.getSantaHat() +
+				sleigh.getRemainingCapacity() + 
+				(santa.getPresentsDelivered() * 500);
 	}
 	
 	private void randomEvent() {
-
+		if (random.nextInt() % 5 == 0) {
+			// randomEvent
+		}
 	}
 	
 }
