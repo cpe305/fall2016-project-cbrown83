@@ -34,7 +34,7 @@ public class TextWriter {
 		try {
 			if (gameScript.containsKey(textType)) {
 				String text = gameScript.get(textType).toString(); 
-				System.out.println(text); 
+				System.out.println("\n" + text); 
 				if (wait) {
 					waitForContinue();
 				}
