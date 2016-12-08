@@ -23,6 +23,7 @@ public class Santa {
 	
 	public void successfulDelivery() {
 		this.presentsDelivered++; 
+		sleigh.notify(this); 
 	}
 	
 	public int getWeight() {
@@ -60,7 +61,10 @@ public class Santa {
 			// update sleigh weight
 			sleigh.notify(this); 
 		}	
-	}
+		else {
+			System.out.println("Invalid Item"); 
+		}
+}
 	
 	public int getGingerbreadMen() {
 		return gingerbreadMen;
