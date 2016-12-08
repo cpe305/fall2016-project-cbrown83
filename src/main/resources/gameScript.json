@@ -1,0 +1,78 @@
+{
+	"messageContinue": "Press ENTER to continue",
+	"setupCities": [{
+		"name": "North Pole",
+		"landmark": "Santa's Workshop"
+	}, {
+		"name": "Tokyo",
+		"landmark": "Tsukiji Fish Market"
+	}, {
+		"name": "Sydney",
+		"landmark": "42 Wallaby Way"
+	}, {
+		"name": "Aukland",
+		"landmark": "Rangitoto Island"
+	}, {
+		"name": "Beijing",
+		"landmark": "Forbidden City"
+	}, {
+		"name": "Moscow",
+		"landmark": "Tsar Bell"
+	}, {
+		"name": "Paris",
+		"landmark": "Eiffel Tower"
+	}, {
+		"name": "Buenos Aires",
+		"landmark": "Plaza de Mayo"
+	}, {
+		"name": "New York",
+		"landmark": "Central Park"
+	}, {
+		"name": "Mexico City",
+		"landmark": "Chapultepec"
+	}, {
+		"name": "Seattle",
+		"landmark": "Space Needle"
+	}],
+	"messageGreeting": "Welcome to Santa's Christmas Adventure!",
+	"optionsHomeScreen": [
+		"1. Go on the adventure\n",
+		"2. See the best Santa's\n",
+		"3. Exit\n",
+		"What is your choice?"
+	],
+	"messageStartLocation": "It is Christmas Eve. You must decide which route you are going to take. Where do you want to deliver presents first?",
+	"optionsStartLocation": [
+		"1. Tokyo, Japan\n",
+		"2. Sydney, Australia\n",
+		"3. Aukland, New Zealand\n",
+		"What is your choice?"
+	],
+	"messageStockInventory": "Before leaving for your adventure, you should stock up on some snacks and repair supplies from Santa's Workshop. Santa's sleigh can hold 500 pounds, but Santa weighs 250 pounds (he loves cookies) and the presents weigh another 200. You can take up to 50lb of extra weight, but you may not want to use it all up now; you may find some valuable items along your journey. You have 50lb available. What would you like to take with you?",
+
+	  
+	"_comment1": "itemName:price",
+	"carrot": "1",
+	"gingerbreadMen": "2",
+	"hotCocoa": "3",
+	"santaHat": "4",
+	"santaCoat": "5",
+	"candyCanes": "10",
+	"sleighParts": "10",
+
+
+	"_comment2": "cityName:inventoryList",
+	"inventoryNorth Pole": "carrot gingerbreadMen hotCocoa santaHat santaCoat candyCanes sleighParts",
+	"inventoryTokyo": "carrot hotCocoa santaCoat sleighParts",
+	"inventorySydney": "carrot gingerbreadMen hotCocoa santaHat candyCanes",
+	"inventoryAukland": "carrot hotCocoa santaHat sleighParts",
+	"inventoryBeijing": "gingerbreadMen santaHat santaCoat candyCanes",
+	"inventoryMoscow": "carrot gingerbreadMen santaHat candyCanes",
+	"inventoryParis": "carrot gingerbreadMen hotCocoa santaHat santaCoat candyCanes sleighParts",
+	"inventoryBuenos Aires": "gingerbreadMen hotCocoa santaCoat",
+	"inventoryNew York": "carrot gingerbreadMen hotCocoa santaHat santaCoat candyCanes sleighParts",
+	"inventoryMexico City": "gingerbreadMen hotCocoa santaHat",
+	"inventorySeattle": "carrot gingerbreadMen hotCocoa candyCanes sleighParts"
+
+
+}
