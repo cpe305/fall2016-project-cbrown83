@@ -42,6 +42,7 @@ public class Game {
 	
 	private static Santa santa; 
 	private static Sleigh sleigh; 
+	private City curCity; 
 	private static List<Reindeer> reindeer;
 	public static Map<String, City> cities;
 	public static Map<String, Integer> storeItems;
@@ -68,6 +69,10 @@ public class Game {
 		reindeer = getReindeerNames(); 
 		initiateRoute(); 
 		
+		curCity = cities.get("North Pole");
+		//while (curCity.getNextCity() != null) {
+			curCity.visit(santa, sleigh, script);
+		//}
 	}
 	
 	public void initiateRoute() throws Exception {

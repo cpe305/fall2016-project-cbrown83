@@ -22,9 +22,10 @@ public class City {
 		return this.landmark; 
 	}
 	
-	public void visit(JSONObject script) {
+	public void visit(Santa santa, Sleigh sleigh, JSONObject script) {
 		this.visited = true; 
 		stockStore(script); 
+		store.visit(santa, sleigh, script); 
 	}
 	
 	public boolean isVisited() {
