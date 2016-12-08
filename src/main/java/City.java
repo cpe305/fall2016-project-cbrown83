@@ -12,12 +12,14 @@ public class City {
 	Store store; 
 	boolean visited; 
 	City nextCity; 
+	boolean attemptedDelivery; 
 	
 	public City(String name, String landmark) {
 		this.name = name; 
 		this.landmark = landmark; 
 		this.visited = false; 
 		this.store = null; 
+		this.attemptedDelivery = false; 
 	}
 	
 	public String getName() {
@@ -59,7 +61,12 @@ public class City {
 		
 		switch (choice) {
 			case DELIVER_PRESENTS: 
-				playMiniGame(santa, reader); 
+				if (!attemptedDelivery) {
+					playMiniGame(santa, reader);
+				}
+				else {
+					System.out.println("You already tried to deliver presents");
+				}
 				break; 
 				
 			case CHECK_INVENTORY:
@@ -81,6 +88,7 @@ public class City {
 	}
 	
 	private void playMiniGame(Santa santa, InputReader reader) {
+		attemptedDelivery = true; 
 		System.out.println("Guess a number between 1 and 3");
 		int guess = reader.getInput(1, 3);
 		if (MiniGame.play(guess)) {
