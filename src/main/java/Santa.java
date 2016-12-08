@@ -12,7 +12,8 @@ public class Santa {
 	private int santaHat = 0; 
 	private int santaCoat = 0; 
 	private int candyCanes = 0; 
-	private int sleighParts = 0; 
+	private int sleighParts = 0;
+	private int consumed = 0; 
 	
 	private Sleigh sleigh; 
 	private int presentsDelivered = 0;
@@ -28,7 +29,7 @@ public class Santa {
 	
 	public int getWeight() {
 		return DEFAULT_WEIGHT_SANTA + gingerbreadMen + carrots + hotCocoa + 
-				santaHat + santaCoat + candyCanes + sleighParts - 
+				santaHat + santaCoat + candyCanes + sleighParts + consumed -
 				(presentsDelivered * WEIGHT_PRESENT_PACKAGE); 
 	}
 	
@@ -106,7 +107,15 @@ public class Santa {
 		this.sleigh = sleigh; 
 	}
 	
-	public void displayInventory() {
+	public void displayInventory(JSONObject script) {
+		System.out.println("--INVENTORY--");
+		System.out.println(Game.CARROT + ": " + (getCarrots()/Integer.valueOf((String)script.get(Game.CARROT))));
+		System.out.println(Game.GINGERBREAD_MEN + ": " + (getGingerbreadMen()/Integer.valueOf((String)script.get(Game.GINGERBREAD_MEN))));
+		System.out.println(Game.HOT_COCOA + ": " + (getHotCocoa()/Integer.valueOf((String)script.get(Game.HOT_COCOA))));
+		System.out.println(Game.SANTA_HAT + ": " + (getSantaHat()/Integer.valueOf((String)script.get(Game.SANTA_HAT))));
+		System.out.println(Game.SANTA_COAT + ": " + (getSantaCoat()/Integer.valueOf((String)script.get(Game.SANTA_COAT))));
+		System.out.println(Game.CANDY_CANES + ": " + (getCandyCanes()/Integer.valueOf((String)script.get(Game.CANDY_CANES))));
+		System.out.println(Game.SLEIGH_PARTS + ": " + (getSleighParts()/Integer.valueOf((String)script.get(Game.SLEIGH_PARTS))));
 		
 	}
 }

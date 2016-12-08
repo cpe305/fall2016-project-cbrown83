@@ -54,7 +54,7 @@ public class Store {
 		int itemNum; 
 		InputReader reader = InputReader.getInstance(); 
 		while (sleigh.hasCapacity()) {
-			System.out.println("You have " + sleigh.getRemainingCapacity() + "lb left.");
+			System.out.println("\nYou have " + sleigh.getRemainingCapacity() + "lb left.");
 			System.out.print("Which item would you like to add? (Enter #) ");
 			itemNum = reader.getInput(1, itemList.size()+1);
 
@@ -67,7 +67,6 @@ public class Store {
 				quantity = Integer.parseInt(reader.getInput());
 				if (Integer.parseInt((String)script.get(itemList.get(itemNum-1))) * quantity > sleigh.getRemainingCapacity()) {
 					System.out.println("Weight exceeds remaining capacity; item was not added"); 
-					System.out.println(); 
 				}
 				else {
 					santa.updateInventory(itemList.get(itemNum-1), quantity, script);
