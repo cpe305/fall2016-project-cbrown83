@@ -13,6 +13,7 @@ public class Game {
 	// eventually create separate game window to display text at certain scenes
 	
 	private static final int NUMBER_OF_REINDEER = 9; 
+	private static final int NUMBER_OF_CITIES = 11; 
 	
 	// cities to visit
 	private static final String NORTH_POLE = "North Pole";
@@ -62,6 +63,7 @@ public class Game {
 	}
 	
 	public void play() throws Exception {
+		int citiesLeft = NUMBER_OF_CITIES; 
 		script = writer.getGameScript();
 		santa = new Santa(); 
 		sleigh = new Sleigh(santa); 
@@ -70,9 +72,14 @@ public class Game {
 		initiateRoute(); 
 		
 		curCity = cities.get("North Pole");
-		//while (curCity.getNextCity() != null) {
-			curCity.visit(santa, sleigh, script);
-		//}
+		curCity.visit(santa, sleigh, script, citiesLeft--);
+		System.out.println("Well then, you're ready to get going. Good luck! You have a long night ahead of you...\n");
+		do {
+			curCity = curCity.getNextCity(); 
+			curCity.visit(santa, sleigh, script, citiesLeft--);
+		} while (curCity.getNextCity() != null); 
+		
+		// end game - total score
 	}
 	
 	public void initiateRoute() throws Exception {
@@ -167,7 +174,6 @@ public class Game {
 		cities.get(BUENOS_AIRES).setNextCity(cities.get(NEW_YORK));
 		cities.get(NEW_YORK).setNextCity(cities.get(MEXICO_CITY));
 		cities.get(MEXICO_CITY).setNextCity(cities.get(SEATTLE));
-		cities.get(SEATTLE).setNextCity(cities.get(NORTH_POLE));
 	}
 	
 	private void gameOver() {
