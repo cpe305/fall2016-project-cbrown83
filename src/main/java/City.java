@@ -70,7 +70,7 @@ public class City {
 				break; 
 				
 			case CHECK_INVENTORY:
-				santa.displayInventory(); 
+				santa.displayInventory(script); 
 				break; 
 				
 			case EXPLORE_PARK:
