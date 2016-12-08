@@ -35,7 +35,7 @@ public class Store {
 	}
 	
 	public void visit(Santa santa, Sleigh sleigh, JSONObject script) {
-		System.out.println("Welcome to the store at " + city.getLandmark());
+		System.out.println("Welcome to the store at " + city.getLandmark() + "!");
 		System.out.println("Here are the store items and their cost: ");
 
 		String item;
@@ -43,7 +43,7 @@ public class Store {
 			item = itemList.get(i);
 			System.out.println(i+1 + ". " + item + " (" + script.get(item) + "lb)");
 		}
-		System.out.println(itemList.size()+1 + ". Exit");
+		System.out.println(itemList.size()+1 + ". Leave " + city.getLandmark());
 		System.out.println();
 		
 		shop(itemList, santa, sleigh, script);

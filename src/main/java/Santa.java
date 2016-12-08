@@ -105,4 +105,8 @@ public class Santa {
 	public void setSleigh(Sleigh sleigh) {
 		this.sleigh = sleigh; 
 	}
+	
+	public void displayInventory() {
+		
+	}
 }

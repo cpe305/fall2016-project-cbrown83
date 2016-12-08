@@ -63,23 +63,29 @@ public class Game {
 	}
 	
 	public void play() throws Exception {
-		int citiesLeft = NUMBER_OF_CITIES; 
 		script = writer.getGameScript();
 		santa = new Santa(); 
 		sleigh = new Sleigh(santa); 
 		santa.setSleigh(sleigh); 
+		
 		reindeer = getReindeerNames(); 
 		initiateRoute(); 
 		
-		curCity = cities.get("North Pole");
-		curCity.visit(santa, sleigh, script, citiesLeft--);
+		cities.get("North Pole").visit(santa, sleigh, script, NUMBER_OF_CITIES);
+		
+		
+		
+		// end game - total score
+	}
+	
+	public void startAdventure() {
+		int citiesLeft = NUMBER_OF_CITIES-1; 
 		System.out.println("Well then, you're ready to get going. Good luck! You have a long night ahead of you...\n");
 		do {
 			curCity = curCity.getNextCity(); 
 			curCity.visit(santa, sleigh, script, citiesLeft--);
+			
 		} while (curCity.getNextCity() != null); 
-		
-		// end game - total score
 	}
 	
 	public void initiateRoute() throws Exception {
