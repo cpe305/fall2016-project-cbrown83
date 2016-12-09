@@ -38,3 +38,7 @@ SO, I can take 50lb of additional items with me. Choose wisely.
 Love, 
 
 Santa
+
+***
+
+For more info, visit https://cbrown83.github.io/fall2016-project-cbrown83/
