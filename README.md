@@ -20,7 +20,7 @@ Upon returning to the North Pole, Santa will evaluate his success (or failure) i
 - Sleigh parts (10lb)– 19th century sleighs require a lot of repairs
 
 ###About Sleigh Capacity:
-I, Santa, have no metabolism, so anything that I consumes is still accounted for when calculating the remaining capacity of the sleigh. However, once consumed, I will no longer have the item(s) in his inventory (as it is now in my stomach). The only way to increase the remaining capacity is to successfully deliver presents. If the sleigh capacity is maxed out and a random event occurs requiring me to consume an item that I do not have, my final score will reflect negative points. 
+I, Santa, have no metabolism, so anything that I consume is still accounted for when calculating the remaining capacity of the sleigh. However, once consumed, I will no longer have the item(s) in my inventory (as it is now in my stomach). The only way to increase the remaining capacity is to successfully deliver presents. If the sleigh capacity is maxed out and a random event occurs requiring me to consume an item that I do not have, my final score will reflect negative points. 
 
 Here is some simple math: 
 
