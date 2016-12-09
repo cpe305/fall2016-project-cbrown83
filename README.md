@@ -11,21 +11,27 @@ Upon returning to the North Pole, Santa will evaluate his success (or failure) i
 
 ##Santa’s Lessons Learned - 
 ###Items to take: 
-Carrots (1lb) – Reindeer get hungry
-Gingerbread men (2lb)– I get hungry
-Hot Cocoa (3lb)– I also get thirsty 
-Santa Hat (4lb)– An old noggin is cold noggin
-Santa Coat (5lb)– It is cold in the winter
-Candy Canes (10lb)– The only thing to distract children from technology is sugar, a lot of sugar
-Sleigh parts (10lb)– 19th century sleighs require a lot of repairs
+- Carrots (1lb) – Reindeer get hungry
+- Gingerbread men (2lb)– I get hungry
+- Hot Cocoa (3lb)– I also get thirsty 
+- Santa Hat (4lb)– An old noggin is cold noggin
+- Santa Coat (5lb)– It is cold in the winter
+- Candy Canes (10lb)– The only thing to distract children from technology is sugar, a lot of sugar
+- Sleigh parts (10lb)– 19th century sleighs require a lot of repairs
 
 ###About Sleigh Capacity:
 I, Santa, have no metabolism, so anything that I consumes is still accounted for when calculating the remaining capacity of the sleigh. However, once consumed, I will no longer have the item(s) in his inventory (as it is now in my stomach). The only way to increase the remaining capacity is to successfully deliver presents. If the sleigh capacity is maxed out and a random event occurs requiring me to consume an item that I do not have, my final score will reflect negative points. 
+
 Here is some simple math: 
+
 The sleigh can hold 500lb. 
+
 I weigh 250lb. 
+
 The presents weigh 200lb (sad that I weigh more than the presents). 
+
 500 – 250 – 200 = 50lb remaining
+
 SO, I can take 50lb of additional items with me. Choose wisely. 
 
 - Santa
