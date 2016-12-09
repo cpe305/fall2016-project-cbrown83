@@ -48,7 +48,6 @@ public class Game {
 	private City curCity; 
 	private static List<Reindeer> reindeer = new ArrayList<Reindeer>();
 	public static Map<String, City> cities;
-	public static Map<String, Integer> storeItems;
 	private static Random random = new Random(); 
 	
 	private static Game instance = null; 
