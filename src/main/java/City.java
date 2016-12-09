@@ -59,7 +59,12 @@ public class City {
 		System.out.println("2. Check Inventory");
 		System.out.println("3. Explore the Park");
 		System.out.println("4. Stop at " + getLandmark());
-		System.out.println("5. Travel to " + getNextCity().getName());
+		if (getNextCity() == null) {
+			System.out.println("5. Return to the North Pole");
+		}
+		else {
+			System.out.println("5. Travel to " + getNextCity().getName());
+		}
 		
 		System.out.println("What would you like to do?");
 		int choice = reader.getInput(DELIVER_PRESENTS, NEXT_CITY);
@@ -102,7 +107,7 @@ public class City {
 		}
 		else {
 			Random random = new Random(); 
-			int messageNum = random.nextInt() % 4; 
+			int messageNum = random.nextInt() % 4 * -1; 
 			JSONArray messages = (JSONArray)script.get("methodsToCatch");
 			System.out.println(messages.get(messageNum));
 			System.out.println("You were unable to deliver presents to " + getName());
