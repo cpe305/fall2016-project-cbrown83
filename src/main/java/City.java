@@ -1,3 +1,6 @@
+import java.util.Random;
+
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject; 
 
 public class City {
@@ -35,6 +38,8 @@ public class City {
 		stockStore(script); 
 		
 		if (getName().equals("North Pole")) {
+			TextWriter writer = TextWriter.getInstance(); 
+			writer.printGameText("messageSantasWorkshop", false);
 			store.visit(santa, sleigh, script); 
 		}
 		else {
@@ -62,7 +67,7 @@ public class City {
 		switch (choice) {
 			case DELIVER_PRESENTS: 
 				if (!attemptedDelivery) {
-					playMiniGame(santa, reader);
+					playMiniGame(santa, reader, script);
 				}
 				else {
 					System.out.println("You already tried to deliver presents");
@@ -87,7 +92,7 @@ public class City {
 		return choice; 
 	}
 	
-	private void playMiniGame(Santa santa, InputReader reader) {
+	private void playMiniGame(Santa santa, InputReader reader, JSONObject script) {
 		attemptedDelivery = true; 
 		System.out.println("Guess a number between 1 and 3");
 		int guess = reader.getInput(1, 3);
@@ -96,7 +101,11 @@ public class City {
 			santa.successfulDelivery(); 
 		}
 		else {
-			System.out.println("You were caught by children and could not deliver presents to " + getName());
+			Random random = new Random(); 
+			int messageNum = random.nextInt() % 4; 
+			JSONArray messages = (JSONArray)script.get("methodsToCatch");
+			System.out.println(messages.get(messageNum));
+			System.out.println("You were unable to deliver presents to " + getName());
 		}
 	}
 	

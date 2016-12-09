@@ -36,19 +36,20 @@
 	}],
 	"messageGreeting": "Welcome to Santa's Christmas Adventure!",
 	"optionsHomeScreen": [
-		"1. Go on the adventure\n",
-		"2. See the best Santa's\n",
-		"3. Exit\n",
+		"1. Go on the adventure",
+		"2. See the best Santa's",
+		"3. View Santa's lessons learned", 
+		"4. Exit",
 		"What is your choice?"
 	],
 	"messageStartLocation": "It is Christmas Eve. You must decide which route you are going to take. Where do you want to deliver presents first?",
 	"optionsStartLocation": [
-		"1. Tokyo, Japan\n",
-		"2. Sydney, Australia\n",
-		"3. Aukland, New Zealand\n",
+		"1. Tokyo, Japan",
+		"2. Sydney, Australia",
+		"3. Aukland, New Zealand",
 		"What is your choice?"
 	],
-	"messageStockInventory": "Before leaving for your adventure, you should stock up on some snacks and repair supplies from Santa's Workshop. Santa's sleigh can hold 500 pounds, but Santa weighs 250 pounds (he loves cookies) and the presents weigh another 200. You can take up to 50lb of extra weight, but you may not want to use it all up now; you may find some valuable items along your journey. You have 50lb available. What would you like to take with you?",
+	"messageSantasWorkshop": "Before leaving for your adventure, you should stock up on some snacks and repair supplies from Santa's Workshop. Santa's sleigh can hold 500 pounds, but Santa weighs 250 pounds (he loves cookies) and the presents weigh another 200. You can take up to 50lb of extra weight, but you may not want to use it all up now; you may find some valuable items along your journey. You have 50lb available. What would you like to take with you?",
 
 	  
 	"_comment1": "itemName:price",
@@ -72,7 +73,81 @@
 	"inventoryBuenos Aires": "gingerbreadMen hotCocoa santaCoat",
 	"inventoryNew York": "carrot gingerbreadMen hotCocoa santaHat santaCoat candyCanes sleighParts",
 	"inventoryMexico City": "gingerbreadMen hotCocoa santaHat",
-	"inventorySeattle": "carrot gingerbreadMen hotCocoa candyCanes sleighParts"
+	"inventorySeattle": "carrot gingerbreadMen hotCocoa candyCanes sleighParts", 
+	
+	"randomEvents": [{
+		"item": "santaHat", 
+		"quantity": "-1",
+		"message": "Santa lost his hat while flying!"
+		}, { 
+		"item": "santaCoat", 
+		"impact": "-1",
+		"message": "Santa ate too many cookies and couldn't fit through the chimney. He had to leave his coat behind."
+		}, {
+		"item": "santaCoat", 
+		"impact": "-1", 
+		"message": "Santa slid down the chimney and landed on some recently burned wood. He ruined his coat."
+		}, {
+		"item": "carrot", 
+		"impact": "-9",
+		"message": "The reindeer got hungry!"
+		}, { 
+		"item": "hotCocoa", 
+		"impact": "-1",
+		"message": "Santa got thirsty."
+		}, { 
+		"item": "gingerbreadMen", 
+		"impact": "-2",
+		"message": "Santa got hungry."
+		}, { 
+		"item": "santaCoat", 
+		"impact": "-1",
+		"message": "Santa drank too much hot chocolate and threw up on his coat."
+		}, { 
+		"item": "candyCanes", 
+		"impact": "-1",
+		"message": "You broke a candy cane!"
+		}, { 
+		"item": "sleighParts", 
+		"impact": "-1",
+		"message": "The sleigh broke down. You need to repair it."
+		}], 
+		
+	"methodsToCatch": [
+		"A child set up a door bell camera in their chimney. You were caught.", 
+		"The children set up the house alarm to go off when you open the chimney drawers. You were caught.",
+		"A child placed a video monitor in the Christmas tree. You were caught.", 
+		"The reindeer set off the motion-sensor light and woke the children. You were caught."
+	],
+	"santasNotes": 
+"Hello it's Santa! I would like YOU to join me on my Christmas Eve adventure!
+I needs help delivering presents to children all over the world. Join me in guiding my reindeer to 10 cities across the map to keep the Christmas spirit alive. Santa’s Christmas Adventure is a text based game lightly based off The Oregon Trail. At each city along the way, I have the options to view some famous landmarks and deliver presents. However, with 21st century tech-savvy children, delivering presents isn’t as easy as it once was. Are you up for the challenge? 
 
+Santa’s Lessons Learned
+Items to take: 
+Carrots (1lb) – Reindeer get hungry
+Gingerbread men (2lb)– I get hungry
+Hot Cocoa (3lb)– I also get thirsty
+Santa Hat (4lb)– An old noggin is cold noggin
+Santa Coat (5lb)– It is cold in the winter
+Candy Canes (10lb)– The only thing to distract children from technology is sugar, a lot of sugar
+Sleigh parts (10lb)– 19th century sleighs require a lot of repairs
+
+About Sleigh Capacity:
+I, Santa, have no metabolism, so anything that I consumes is still accounted for when calculating the remaining capacity of the sleigh. However, once consumed, I will no longer have the item(s) in his inventory (as it is now in my stomach). The only way to increase the remaining capacity is to successfully deliver presents. If the sleigh capacity is maxed out and a random event occurs requiring me to consume an item that I do not have, my final score will reflect negative points. 
+Here is some simple math: 
+The sleigh can hold 500lb.
+I weigh 250lb.
+The presents weigh 200lb (sad that I weigh more than the presents). 
+500 – 250 – 200 = 50lb remaining
+SO, I can take 50lb of additional items with me. Choose wisely. 
+
+Scoring: 
+Upon returning to the North Pole, I will evaluate my success (or failure) in delivering presents. For every successful delivery, I reward myself 100 points. Then I take the weight of my left-over inventory in addition to the sleigh’s remaining capacity and adds that to the total. My best score to date is 550 points. Can you help me beat that?
+
+- Santa\n",
+		
+		"continue": "Press ENTER to go back to the home screen"
+	
 
 }

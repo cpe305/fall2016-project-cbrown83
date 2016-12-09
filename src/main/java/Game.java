@@ -48,9 +48,9 @@ public class Game {
 	private City curCity; 
 	private static List<Reindeer> reindeer = new ArrayList<Reindeer>();
 	public static Map<String, City> cities;
-	public static Map<String, Integer> storeItems;
 	private static Random random = new Random(); 
 	
+	// Singleton class
 	private static Game instance = null; 
 	
 	protected Game(TextWriter w, InputReader r) {
@@ -104,7 +104,7 @@ public class Game {
 	
 	// need to add auto-fill feature
 	private static List<Reindeer> getReindeerNames() {		
-		System.out.println("Enter names for the nine reindeer: ");
+		System.out.println("\nEnter names for the nine reindeer: ");
 		System.out.println("If you would like to use the default names, type 'autofill'.");
 		String name = ""; 
 		for (int i = 0; i < NUMBER_OF_REINDEER; i++) {
@@ -214,10 +214,13 @@ public class Game {
 				(santa.getPresentsDelivered() * 500);
 	}
 	
-	private void randomEvent() {
+	public void randomEvent() {
 		if (random.nextInt() % 5 == 0) {
 			// randomEvent
 		}
 	}
 	
+	public void viewGuide() {
+		writer.printGameText("santasNotes", true);
+	}
 }
