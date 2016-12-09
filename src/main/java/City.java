@@ -10,12 +10,12 @@ public class City {
 	private static final int VISIT_STORE = 4; 
 	private static final int NEXT_CITY = 5; 
 	
-	String name; 
-	String landmark; 
-	Store store; 
-	boolean visited; 
-	City nextCity; 
-	boolean attemptedDelivery; 
+	private String name; 
+	private String landmark; 
+	private Store store; 
+	private boolean visited; 
+	private City nextCity; 
+	private boolean attemptedDelivery; 
 	
 	public City(String name, String landmark) {
 		this.name = name; 

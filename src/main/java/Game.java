@@ -84,7 +84,7 @@ public class Game {
 		// save
 	}
 	
-	public void startAdventure() {
+	private void startAdventure() {
 		int citiesLeft = NUMBER_OF_CITIES-1; 
 		System.out.println("Well then, you're ready to get going. Good luck! You have a long night ahead of you...\n");
 		do {
@@ -94,7 +94,7 @@ public class Game {
 		} while (curCity.getNextCity() != null); 
 	}
 	
-	public void initiateRoute() throws Exception {
+	private void initiateRoute() throws Exception {
 		populateMap(); 
 		writer.printGameText("messageStartLocation", false);
 		writer.printOptionText("optionsStartLocation");

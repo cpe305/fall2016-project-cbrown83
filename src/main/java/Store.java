@@ -8,8 +8,8 @@ import org.json.simple.JSONObject;
 
 
 public class Store {	 
-	City city; 
-	List<String> itemList = new ArrayList<String>(); 
+	private City city; 
+	private List<String> itemList = new ArrayList<String>(); 
 
 	
 	// Item names must be in format to print out
@@ -46,10 +46,10 @@ public class Store {
 		System.out.println(itemList.size()+1 + ". Leave " + city.getLandmark());
 		System.out.println();
 		
-		shop(itemList, santa, sleigh, script);
+		shop(santa, sleigh, script);
 	}
 	
-	public void shop(List<String> itemList, Santa santa, Sleigh sleigh, JSONObject script) {
+	private void shop(Santa santa, Sleigh sleigh, JSONObject script) {
 		int quantity; 
 		int itemNum; 
 		InputReader reader = InputReader.getInstance(); 
