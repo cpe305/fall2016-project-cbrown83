@@ -50,6 +50,7 @@ public class Game {
 	public static Map<String, City> cities;
 	private static Random random = new Random(); 
 	
+	// Singleton class
 	private static Game instance = null; 
 	
 	protected Game(TextWriter w, InputReader r) {

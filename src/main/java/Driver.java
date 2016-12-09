@@ -28,7 +28,7 @@ public class Driver {
 					game.viewGuide(); 
 					break; 
 					
-				case 4: 
+				case 4: // Exit
 					return; 
 					
 				default: 
