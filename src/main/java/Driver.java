@@ -8,7 +8,7 @@ public class Driver {
 	public static void main(String[] args) throws Exception
 	{	
 		int choice = 0; 
-		while (choice != 4) {
+		while (choice != 4 && choice != 1) {
 			writer.printGameText("messageGreeting", false);
 			writer.printOptionText("optionsHomeScreen");
 			choice = reader.getInput(1, 4);
