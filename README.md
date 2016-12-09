@@ -9,7 +9,7 @@ Santa's Christmas Adventure is a text based game. To play the game, simply execu
 ##Scoring: 
 Upon returning to the North Pole, Santa will evaluate his success (or failure) in delivering presents. For every successful delivery, Santa rewards himself 100 points. He then takes the weight of his left-over inventory in addition to the sleigh’s remaining capacity and adds that to the total. His best score to date is 550 points. Can you help him beat that?
 
-##Santa’s Lessons Learned - 
+##Santa’s Lessons Learned:
 ###Items to take: 
 - Carrots (1lb) – Reindeer get hungry
 - Gingerbread men (2lb)– I get hungry
