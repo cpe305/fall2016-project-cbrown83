@@ -107,7 +107,8 @@ public class City {
 		}
 		else {
 			Random random = new Random(); 
-			int messageNum = random.nextInt() % 4 * -1; 
+			int messageNum = Math.abs(random.nextInt() % 4);
+			System.out.println("INDEX: " + messageNum); 
 			JSONArray messages = (JSONArray)script.get("methodsToCatch");
 			System.out.println(messages.get(messageNum));
 			System.out.println("You were unable to deliver presents to " + getName());
