@@ -211,7 +211,7 @@ public class Game {
 		return santa.getCandyCanes() + santa.getCarrots() + santa.getGingerbreadMen() + 
 				santa.getHotCocoa() + santa.getSantaCoat() + santa.getSantaHat() +
 				sleigh.getRemainingCapacity() + 
-				(santa.getPresentsDelivered() * 500);
+				(santa.getPresentsDelivered() * 100);
 	}
 	
 	public void randomEvent() {

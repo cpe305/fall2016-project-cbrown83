@@ -62,7 +62,15 @@
 <h2>
 <a id="design-patterns" class="anchor" href="#design-patterns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Design Patterns</h2>
 
+<h3>
+<a id="singleton-pattern" class="anchor" href="#singleton-pattern" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Singleton Pattern</h3>
+
 <p>The InputReader, TextWriter, and Game classes all implement the Singleton pattern. The use of the pattern for the InputReader and TextWriter classes are to ensure that a limited number of streams are opened. The Game classes utilizes the pattern since the Game class contains a large amount of data, which could get costly if multiple instances are instantiated. </p>
+
+<h3>
+<a id="observer-pattern" class="anchor" href="#observer-pattern" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Observer Pattern</h3>
+
+<p>Additionally, when Santa adds items to the sleigh, the sleigh must be notified of the new addition. The observer pattern was implemented to monitor these changes and update the total weight and remaining capacity. </p>
 
 <hr>
 
